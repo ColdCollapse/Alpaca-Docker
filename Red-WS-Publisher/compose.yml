@@ -1,0 +1,19 @@
+services:
+  redis-bus:
+    build:
+      context: .
+      dockerfile: docker/redis/Dockerfile
+      args:
+        REDIS_VERSION: ${REDIS_VERSION}
+    container_name: ${REDIS_CONTAINER_NAME}
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - shared_net
+    restart: unless-stopped
+    command: redis-server
+
+networks:
+  shared_net:
+    name: ${REDIS_NETWORK}
+    external: true
