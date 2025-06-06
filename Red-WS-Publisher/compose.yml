@@ -15,5 +15,5 @@ services:
 
 networks:
   shared_net:
-    name: ${REDIS_NETWORK}
+    name: "REDIS_NETWORK"
     external: true
