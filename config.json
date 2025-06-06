@@ -1,0 +1,5 @@
+{
+  ALPACA_API_KEY = <key_id>
+  ALPACA_SECRET_KEY = <secret_key>
+  ALPACA_PAPER = True
+}
