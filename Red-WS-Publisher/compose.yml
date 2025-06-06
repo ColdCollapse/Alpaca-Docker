@@ -4,10 +4,10 @@ services:
       context: .
       dockerfile: docker/redis/Dockerfile
       args:
-        REDIS_VERSION: ${REDIS_VERSION}
-    container_name: ${REDIS_CONTAINER_NAME}
+        REDIS_VERSION: 7.2-alpine
+    container_name: Red-WS-Publisher
     ports:
-      - "${REDIS_PORT}:6379"
+      - 6379:6379
     networks:
       - shared_net
     restart: unless-stopped
@@ -15,5 +15,5 @@ services:
 
 networks:
   shared_net:
-    name: "REDIS_NETWORK"
+    name: REDIS_NETWORK
     external: true
