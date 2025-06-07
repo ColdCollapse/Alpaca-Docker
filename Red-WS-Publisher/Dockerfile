@@ -4,4 +4,4 @@ WORKDIR /app
 COPY . .
 RUN pip install redis alpaca-py
 
-CMD ["python", "app.py"]
+CMD ["python", "Pub.py"]
