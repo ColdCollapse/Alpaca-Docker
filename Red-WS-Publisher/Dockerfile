@@ -1,4 +1,7 @@
-ARG REDIS_VERSION=7.2-alpine
-FROM redis:${REDIS_VERSION}
+FROM python:3.10-slim
 
-# Optional configs or extensions could be added here later
+WORKDIR /app
+COPY . .
+RUN pip install redis alpaca-py
+
+CMD ["python", "app.py"]
