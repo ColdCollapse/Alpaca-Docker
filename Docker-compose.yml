@@ -8,7 +8,9 @@ services:
       - "6379:6379"
     networks:
       - redis-net
-
+services:  
+  API-Nginx-Gateway:
+  
 networks:
   redis-net:
     driver: bridge
